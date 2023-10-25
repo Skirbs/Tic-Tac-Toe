@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --background-5: hsl(250, 40%, 5%);
+  --background-20: hsl(250, 40%, 20%);
+}
+
+.background {
+  z-index: -100;
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 50%, var(--background-5), var(--background-20));
+}
+
+* {
+  color: white;
+  font-size: 1rem;
+  font-family: "Playpen Sans", cursive, Arial;
+}
