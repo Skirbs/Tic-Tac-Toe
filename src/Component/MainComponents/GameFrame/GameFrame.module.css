@@ -1,0 +1,12 @@
+.game-frame {
+  padding: 16px 64px !important;
+  margin-block: 16px;
+  padding: 16px;
+
+  background-image: linear-gradient(-30deg, var(--primary-30), var(--primary-20));
+}
+
+.inputs-div {
+  width: 400px;
+  gap: 16px;
+}
