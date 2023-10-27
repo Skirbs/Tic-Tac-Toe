@@ -7,6 +7,8 @@
   border-radius: 100px;
   padding: 5px 10px;
   background-color: var(--primary-35);
+
+  transition: 0.1s;
 }
 .user-names-div p {
   white-space: nowrap;
@@ -19,4 +21,12 @@
   background-color: transparent;
   outline: none;
   border: none;
+}
+
+.user-names-div input::placeholder {
+  color: var(--primary-70);
+}
+
+.active {
+  border: 4px solid var(--primary-40);
 }

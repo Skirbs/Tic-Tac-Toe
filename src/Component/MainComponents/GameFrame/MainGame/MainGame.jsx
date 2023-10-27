@@ -14,20 +14,18 @@ const winningArrays = [
 ];
 
 const MainGame = (props) => {
-  const [currentCells, setCurrentCell] = useState([
-    -1, -1, -1, -1, -1, -1, -1, -1, -1,
-  ]); /* -1: empty, 0: cross, 1: circle */
-
   const setCell = (e) => {
     const cellIndex = parseInt(e.target.id.slice(-1));
 
-    currentCells[cellIndex] = props.currentPlayer;
+    if (props.currentCells[cellIndex] != -1) return;
+
+    props.currentCells[cellIndex] = props.currentPlayer;
 
     if (checkVictory()) {
-      console.log("alsdkfjo");
+      props.hasWinnerHandler();
     }
 
-    setCurrentCell(currentCells);
+    props.setCurrentCell(props.currentCells);
     props.alternatePlayer();
   };
 
@@ -36,9 +34,9 @@ const MainGame = (props) => {
 
     for (const arr of winningArrays) {
       if (
-        currentCells[arr[0]] === currentPlayerIndex &&
-        currentCells[arr[1]] === currentPlayerIndex &&
-        currentCells[arr[2]] === currentPlayerIndex
+        props.currentCells[arr[0]] === currentPlayerIndex &&
+        props.currentCells[arr[1]] === currentPlayerIndex &&
+        props.currentCells[arr[2]] === currentPlayerIndex
       ) {
         return true;
       }
@@ -50,8 +48,8 @@ const MainGame = (props) => {
   return (
     <Card className={style["main-game"]}>
       <button
-        className={`${style.cell} outline ${currentCells[0] == 0 ? style.cross : ""} ${
-          currentCells[0] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[0] == 0 ? style.cross : ""} ${
+          props.currentCells[0] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-0"
         onClick={(e) => {
@@ -59,8 +57,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[1] == 0 ? style.cross : ""} ${
-          currentCells[1] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[1] == 0 ? style.cross : ""} ${
+          props.currentCells[1] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-1"
         onClick={(e) => {
@@ -68,8 +66,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[2] == 0 ? style.cross : ""} ${
-          currentCells[2] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[2] == 0 ? style.cross : ""} ${
+          props.currentCells[2] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-2"
         onClick={(e) => {
@@ -77,8 +75,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[3] == 0 ? style.cross : ""} ${
-          currentCells[3] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[3] == 0 ? style.cross : ""} ${
+          props.currentCells[3] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-3"
         onClick={(e) => {
@@ -86,8 +84,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[4] == 0 ? style.cross : ""} ${
-          currentCells[4] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[4] == 0 ? style.cross : ""} ${
+          props.currentCells[4] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-4"
         onClick={(e) => {
@@ -95,8 +93,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[5] == 0 ? style.cross : ""} ${
-          currentCells[5] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[5] == 0 ? style.cross : ""} ${
+          props.currentCells[5] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-5"
         onClick={(e) => {
@@ -104,8 +102,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[6] == 0 ? style.cross : ""} ${
-          currentCells[6] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[6] == 0 ? style.cross : ""} ${
+          props.currentCells[6] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-6"
         onClick={(e) => {
@@ -113,8 +111,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[7] == 0 ? style.cross : ""} ${
-          currentCells[7] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[7] == 0 ? style.cross : ""} ${
+          props.currentCells[7] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-7"
         onClick={(e) => {
@@ -122,8 +120,8 @@ const MainGame = (props) => {
         }}></button>
 
       <button
-        className={`${style.cell} outline ${currentCells[8] == 0 ? style.cross : ""} ${
-          currentCells[8] == 1 ? style.circle : ""
+        className={`${style.cell} outline ${props.currentCells[8] == 0 ? style.cross : ""} ${
+          props.currentCells[8] == 1 ? style.circle : ""
         }`.trim()}
         id="cell-8"
         onClick={(e) => {
