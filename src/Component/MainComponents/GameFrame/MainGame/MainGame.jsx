@@ -21,11 +21,18 @@ const MainGame = (props) => {
 
     props.currentCells[cellIndex] = props.currentPlayer;
 
+    props.setCurrentCell(props.currentCells);
+
     if (checkVictory()) {
-      props.hasWinnerHandler();
+      props.gameStateHandler("win");
+      return;
     }
 
-    props.setCurrentCell(props.currentCells);
+    if (checkTie()) {
+      props.gameStateHandler("tie");
+      return;
+    }
+
     props.alternatePlayer();
   };
 
@@ -43,6 +50,15 @@ const MainGame = (props) => {
     }
 
     return false;
+  };
+
+  const checkTie = () => {
+    for (const cellState of props.currentCells) {
+      if (cellState === -1) {
+        return false;
+      }
+    }
+    return true;
   };
 
   return (

@@ -9,10 +9,10 @@ function App() {
     -1, -1, -1, -1, -1, -1, -1, -1, -1,
   ]); /* -1: empty, 0: cross, 1: circle */
 
-  const [hasWinner, setHasWinner] = useState({hasWon: false, player: ""});
+  const [gameState, setGameState] = useState({winningState: "ongoing", player: ""});
 
   const newGame = () => {
-    setHasWinner({hasWon: false, player: ""});
+    setGameState({winningState: "ongoing", player: ""});
     setCurrentCell([-1, -1, -1, -1, -1, -1, -1, -1, -1]);
   };
 
@@ -22,9 +22,9 @@ function App() {
       <GameFrame
         currentCells={currentCells}
         setCurrentCell={setCurrentCell}
-        setHasWinner={setHasWinner}
+        setGameState={setGameState}
       />
-      <Popup hasWinner={hasWinner} newGameHandler={newGame} />
+      <Popup gameState={gameState} newGameHandler={newGame} />
     </>
   );
 }

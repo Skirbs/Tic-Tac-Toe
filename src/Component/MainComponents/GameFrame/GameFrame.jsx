@@ -16,9 +16,9 @@ const GameFrame = (props) => {
     playerNames[playerIndex] = newName;
     setPlayerNames(playerNames);
   };
-  const hasWinnerHandler = () => {
-    props.setHasWinner({
-      hasWon: true,
+  const gameStateHandler = (winningState) => {
+    props.setGameState({
+      winningState: winningState,
       player:
         playerNames[currentPlayer].trim().length != 0
           ? playerNames[currentPlayer]
@@ -53,7 +53,9 @@ const GameFrame = (props) => {
           alternatePlayer={alternatePlayer}
           currentCells={props.currentCells}
           setCurrentCell={props.setCurrentCell}
-          hasWinnerHandler={hasWinnerHandler}
+          gameStateHandler={(winningState) => {
+            gameStateHandler(winningState);
+          }}
         />
       </Card>
     </>
