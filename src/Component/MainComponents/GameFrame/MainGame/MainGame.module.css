@@ -39,12 +39,14 @@
   display: none;
 }
 
-.cell.cross img {
-  display: inline-block;
-  content: url("../../../../assets/Cross.svg");
+.cell.cross {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../../../assets/Cross.svg");
 }
 
-.cell.circle img {
-  display: inline-block;
-  content: url("../../../../assets/Circle.svg");
+.cell.circle {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../../../assets/Circle.svg");
 }
