@@ -23,13 +23,9 @@ const MainGame = (props) => {
 
     currentCells[cellIndex] = props.currentPlayer;
 
-    switch (props.currentPlayer) {
-      case 0:
-        break;
-      case 1:
-        break;
+    if (checkVictory()) {
+      console.log("alsdkfjo");
     }
-    checkVictory();
 
     setCurrentCell(currentCells);
     props.alternatePlayer();
@@ -70,6 +66,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[2] == 0 ? style.cross : ""} ${
           currentCells[2] == 1 ? style.circle : ""
@@ -78,6 +75,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[3] == 0 ? style.cross : ""} ${
           currentCells[3] == 1 ? style.circle : ""
@@ -86,6 +84,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[4] == 0 ? style.cross : ""} ${
           currentCells[4] == 1 ? style.circle : ""
@@ -94,6 +93,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[5] == 0 ? style.cross : ""} ${
           currentCells[5] == 1 ? style.circle : ""
@@ -102,6 +102,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[6] == 0 ? style.cross : ""} ${
           currentCells[6] == 1 ? style.circle : ""
@@ -110,6 +111,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[7] == 0 ? style.cross : ""} ${
           currentCells[7] == 1 ? style.circle : ""
@@ -118,6 +120,7 @@ const MainGame = (props) => {
         onClick={(e) => {
           setCell(e);
         }}></button>
+
       <button
         className={`${style.cell} outline ${currentCells[8] == 0 ? style.cross : ""} ${
           currentCells[8] == 1 ? style.circle : ""

@@ -6,10 +6,15 @@
   --background-20: hsl(250, 40%, 20%);
 
   --primary-20: hsl(250, 50%, 20%);
+  --primary-23: hsl(250, 50%, 23%);
   --primary-25: hsl(250, 50%, 25%);
   --primary-30: hsl(250, 50%, 30%);
   --primary-35: hsl(250, 50%, 35%);
   --primary-40: hsl(250, 50%, 40%);
+}
+
+.body {
+  margin: 0;
 }
 
 .background {
@@ -23,6 +28,10 @@
   color: white;
   font-size: 1rem;
   font-family: "Playpen Sans", cursive, Arial;
+}
+
+p {
+  margin: 0;
 }
 
 /* CSS Variables */
